@@ -1,0 +1,26 @@
+.Shape {
+  padding: 3px;
+
+  &__row {
+    display: flex;
+  }
+
+  &__cell {
+    width: 15px;
+    height: 15px;
+    margin: 3px;
+    border-radius: 50%;
+
+    &--filled {
+      background: #f57100;
+    }
+
+    &--empty {
+      background: rgba(195, 102, 20, 0.2);
+    }
+  }
+
+  &--active {
+    border: 2px solid #f57100 !important;
+  }
+}

@@ -1,0 +1,13 @@
+.RandomPairs {
+  display: flex;
+  margin-bottom: 100px;
+}
+
+.PairItem {
+  border: 1px solid #f57100;
+  opacity: 0.4;
+
+  &--active {
+    opacity: 1;
+  }
+}

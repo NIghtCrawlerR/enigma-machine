@@ -1,0 +1,16 @@
+.ShapesSetSwitcher {
+  display: flex;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.2);
+  opacity: 0.6;
+
+  &--active {
+    color: #f57100;
+    opacity: 1;
+  }
+
+  &__inner {
+    display: flex;
+    margin: 0 15px;
+  }
+}
