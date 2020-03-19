@@ -3,8 +3,9 @@ import React from 'react';
 import RandomPairs from '../RandomPairs';
 import SwitcherLayout from '../SwitcherLayout';
 import Timer from '../Timer';
+import OverlayMenu from '../OverlayMenu';
 
-import './index.scss';
+import './Board.scss';
 
 class Board extends React.Component {
   constructor() {
@@ -15,22 +16,29 @@ class Board extends React.Component {
 
     this.state = {
       chosenPair: {},
-      count: null,
+      count: this.seconds,
+      gameActive: false,
+      endGame: false,
+      gameStatus: null,
     };
   }
 
-  componentDidMount() {
-    this.startTimer();
+  startTimer = (e) => {
+    this.setState({ gameActive: true, count: this.seconds });
+
+    this.interval = setInterval(() => {
+      this.countdown();
+    }, 1000);
   }
 
-  startTimer = () => {
-    this.setState({ count: this.seconds })
-    this.interval = setInterval(() => {
-      const { count } = this.state;
-      console.log("COUNT", count)
-      if (count <= 0) return this.endGame(false);
-      this.setState({ count: count - 1 })
-    }, 1000);
+  countdown = () => {
+    const { count } = this.state;
+
+    if (count > 0) {
+      this.setState({ count: count - 1 });
+    } else {
+      this.endGame(false);
+    }
   }
 
   updateChoosenPair = (index, shape) => {
@@ -43,25 +51,27 @@ class Board extends React.Component {
   };
 
   resetTimer = () => {
-    clearInterval(this.interval);
-    this.startTimer();
+    this.setState({ count: this.seconds })
   }
 
   endGame = win => {
     clearInterval(this.interval);
+    this.setState({ gameActive: false, endGame: true })
 
     if (win) {
-      alert('CONGRATULATIONS')
+      console.warn('CONGRATULATIONS')
+      this.setState({ gameStatus: 'WIN' })
     } else {
-      alert('TRY AGAIN')
+      this.setState({ gameStatus: 'LOSS' })
     }
   }
 
   render() {
-    const { chosenPair, count } = this.state;
+    const { chosenPair, count, gameActive, endGame, gameStatus } = this.state;
 
     return (
       <div className="Board">
+        {!gameActive && <OverlayMenu startTimer={this.startTimer} endGame={endGame} gameStatus={gameStatus} />}
         <Timer count={count} totalSeconds={this.seconds} />
         <RandomPairs chosenPair={chosenPair} resetTimer={this.resetTimer} endGame={this.endGame} />
         <SwitcherLayout updateChoosenPair={this.updateChoosenPair} />

@@ -1,6 +1,14 @@
+@import url(https://fonts.googleapis.com/css?family=VT323);
+
 body {
   margin: 0;
   background: #1b120e;
+  font-family: 'VT323', Arial, sans-serif;
+  -webkit-font-smoothing: none;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 .chevron::before {
@@ -26,3 +34,4 @@ body {
 	left: 0.25em;
 	transform: rotate(-135deg);
 }
+

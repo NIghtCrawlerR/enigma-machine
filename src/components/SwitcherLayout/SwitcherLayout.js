@@ -8,7 +8,7 @@ import {
   KEY_DOWN,
 } from '../../config';
 
-import './index.scss';
+import './SwitcherLayout.scss';
 
 
 class SwitcherLayout extends React.Component {

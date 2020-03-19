@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './index.scss';
+import './Timer.scss';
 
 class Timer extends React.Component {
   render() {
@@ -9,7 +9,9 @@ class Timer extends React.Component {
 
     return (
       <div className="Timer">
-        <div className="Timer__inner" style={{ width: `${width}%` }} />
+        <div className="Timer__inner">
+          <div className="Timer__progressline" style={{ width: `${width}%` }}/>
+        </div>
       </div>
     )
   }

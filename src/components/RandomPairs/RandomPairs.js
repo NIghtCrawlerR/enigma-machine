@@ -33,9 +33,10 @@ class RandomPairs extends React.Component {
 
     if (keyCode === KEY_ENTER) {
       const equal = isEqual(chosenPair, pairs[activePair]);
-
+      console.log(equal)
       if (equal) {
-        resetTimer()
+        console.log("EQUAL")
+        resetTimer();
         this.setState({ activePair: activePair + 1 }, () => {
           if (this.state.activePair === this.pairsAmount) {
             endGame(true)

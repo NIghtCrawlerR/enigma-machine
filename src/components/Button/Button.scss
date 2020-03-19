@@ -1,0 +1,25 @@
+@import '../../assets/styles/variables.scss';
+
+.Button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 46px;
+  min-width: 140px;
+  padding: 5px 40px;
+  border: 1px solid $main-color;
+  color: $main-color;
+  font-size: 24px;
+  font-weight: 500;
+  background: transparent;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  outline: none;
+  cursor: pointer;
+  transition: all .3s;
+
+  &:hover {
+    background: $main-color;
+    color: #fff;
+  }
+}

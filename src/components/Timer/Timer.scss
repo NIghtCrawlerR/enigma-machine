@@ -1,0 +1,22 @@
+@import '../../assets/styles/variables.scss';
+
+.Timer {
+  height: 10px;
+  width: 100%;
+  border: 1px solid $main-color;
+  margin: 30px 0;
+  border-radius: 4px;
+  padding: 17px;
+  height: 40px;
+
+  &__inner {
+    border-radius: 2px;
+    height: 6px;
+    background: #4c1d06;
+  }
+
+  &__progressline {
+    height: 100%;
+    background: $main-color;
+  }
+}

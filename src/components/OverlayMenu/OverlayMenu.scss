@@ -1,0 +1,62 @@
+@import '../../assets/styles/variables.scss';
+
+.OverlayMenu {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  color: $main-color;
+  background: rgba(27, 18, 14, 0.859);
+  z-index: 1;
+
+  &__title {
+    font-size: 58px;
+  }
+
+  &__countdown {
+    color: #fff;
+    font-size: 54px;
+  }
+
+  &__content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    z-index: 1;
+  }
+
+  &__game-description {
+    margin-top: 50px;
+  }
+
+  &__game-description-title {
+    display: inline-block;
+    font-size: 28px;
+    cursor: pointer;
+  }
+
+  &__game-description-text {
+    padding: 0 30px;
+    line-height: 24px;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0) 50%, rgba(0, 0, 0, 0.2) 70%, rgba(0, 0, 0, 0.6));
+    background-size: 100% 0.3rem;
+  }
+}

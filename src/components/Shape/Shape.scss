@@ -1,3 +1,5 @@
+@import '../../assets/styles/variables.scss';
+
 .Shape {
   padding: 3px;
 
@@ -12,7 +14,7 @@
     border-radius: 50%;
 
     &--filled {
-      background: #f57100;
+      background: $main-color;
     }
 
     &--empty {
@@ -21,6 +23,6 @@
   }
 
   &--active {
-    border: 2px solid #f57100 !important;
+    border: 2px solid $main-color !important;
   }
 }

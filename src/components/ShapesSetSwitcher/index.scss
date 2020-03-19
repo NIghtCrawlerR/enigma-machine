@@ -1,11 +1,13 @@
+@import '../../assets/styles/variables.scss';
+
 .ShapesSetSwitcher {
   display: flex;
   align-items: center;
-  color: rgba(255, 255, 255, 0.2);
-  opacity: 0.6;
+  color: rgba(117, 67, 24, 0.722);
+  opacity: 0.5;
 
   &--active {
-    color: #f57100;
+    color: $main-color;
     opacity: 1;
   }
 
